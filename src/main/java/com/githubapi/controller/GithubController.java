@@ -24,7 +24,7 @@ public class GithubController {
     }
 
     @GetMapping("/users/{username}/repositories")
-    public ResponseEntity<ApiResponse> getUserRepositories(@PathVariable String username) {
+    public ResponseEntity<ApiResponse> getUserRepositories(@PathVariable("username") String username) {
         try {
             logger.info("Fetching repositories for user: {}", username);
             List<RepositoryInfo> repositories = githubService.getUserRepositories(username);
